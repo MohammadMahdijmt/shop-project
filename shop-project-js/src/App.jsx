@@ -1,4 +1,4 @@
-import axios from 'axios';
+
 import './App.css';
 import { HomePage } from './components/HomePage/HomePage';
 import { CheckOut } from './components/CheckOut/CheckOut';
