@@ -1,7 +1,10 @@
 import './Tracking.css'
 import { Header } from '../Header/Header'
 import { Link } from 'react-router'
-export function Tracking({ cart }) {
+import { useContext } from 'react'
+import { AppdataContext } from '../../Context/AppdataContext'
+export function Tracking() {
+    const { cart } = useContext(AppdataContext)
     return (
         <>
             <title>Tracking</title>

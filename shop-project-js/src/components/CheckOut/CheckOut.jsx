@@ -1,10 +1,12 @@
 import axios from 'axios';
 import './Checkout.css';
 import { CheckoutHeader } from './CheckoutHeader';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { OrderSummary } from './OrderSummary';
 import { PaymentSummary } from './PaymentSummary';
-export function CheckOut({ cart, appData }) {
+import { AppdataContext } from '../../Context/AppdataContext';
+export function CheckOut() {
+    const { cart } = useContext(AppdataContext)
     const [deliveryTime, setDeliveryTime] = useState([]);
     const [paymentSum, setPaymentSum] = useState(null);
     useEffect(() => {
@@ -33,9 +35,9 @@ export function CheckOut({ cart, appData }) {
 
                 <div className="checkout-grid">
 
-                    <OrderSummary cart={cart} deliveryTime={deliveryTime} appData={appData} />
+                    <OrderSummary deliveryTime={deliveryTime} />
 
-                    <PaymentSummary paymentSum={paymentSum} appData={appData} />
+                    <PaymentSummary paymentSum={paymentSum} />
 
                 </div>
             </div >

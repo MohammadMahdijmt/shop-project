@@ -1,8 +1,10 @@
 import { Link } from "react-router";
 import dayjs from "dayjs";
-import { Fragment } from "react";
+import { Fragment, useContext } from "react";
 import axios from "axios";
-export function OrderDetailsGrid({ orderItem, appData }) {
+import { AppdataContext } from "../../Context/AppdataContext";
+export function OrderDetailsGrid({ orderItem }) {
+    const { appData } = useContext(AppdataContext)
     return (
         <div className="order-details-grid">
             {orderItem.products.map((orderProduct) => {

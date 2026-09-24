@@ -1,9 +1,12 @@
 import dayjs from "dayjs";
 import { DeliveryOption } from "./DeliveryOption";
 import axios from "axios";
+import { useContext } from "react";
+import { AppdataContext } from "../../Context/AppdataContext";
 
 
-export function OrderSummary({ deliveryTime, cart, appData }) {
+export function OrderSummary({ deliveryTime }) {
+    const { cart, appData } = useContext(AppdataContext)
     return (
         <div className="order-summary">
             {deliveryTime.length > 0 && cart.map((cartItem) => {
@@ -64,7 +67,7 @@ export function OrderSummary({ deliveryTime, cart, appData }) {
                                 <div className="delivery-options-title">
                                     Choose a delivery option:
                                 </div>
-                                <DeliveryOption deliveryTime={deliveryTime} cartItem={cartItem} appData={appData} />
+                                <DeliveryOption deliveryTime={deliveryTime} cartItem={cartItem} />
 
                             </div>
                         </div>

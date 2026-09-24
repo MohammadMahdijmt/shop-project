@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router";
-export function Productss({ product, appData }) {
+import { AppdataContext } from "../../Context/AppdataContext";
+export function Productss({ product }) {
+    const { appData } = useContext(AppdataContext)
     const [quantity, setQuantity] = useState(1);
     const [added, setAdded] = useState(false);
 

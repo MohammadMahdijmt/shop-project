@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import { ProductGrid } from './ProductGrid';
 import { useSearchParams } from 'react-router';
 
-export function HomePage({ cart, appData }) {
+export function HomePage() {
     const [products, setProducts] = useState([]);
     const [searchParams] = useSearchParams();
     const textSearch = searchParams.get("search");
@@ -25,11 +25,11 @@ export function HomePage({ cart, appData }) {
         <>
             <title>shop-project</title>
 
-            <Header cart={cart} />
+            <Header />
 
             <div className="home-page">
 
-                <ProductGrid products={products} appData={appData} />
+                <ProductGrid products={products} />
 
             </div>
         </>

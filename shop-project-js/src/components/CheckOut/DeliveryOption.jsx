@@ -1,6 +1,9 @@
 import axios from "axios";
 import dayjs from "dayjs";
-export function DeliveryOption({ deliveryTime, cartItem, appData }) {
+import { useContext } from "react";
+import { AppdataContext } from "../../Context/AppdataContext";
+export function DeliveryOption({ deliveryTime, cartItem }) {
+    const { appData } = useContext(AppdataContext);
     return (
         <>
             {deliveryTime.map((deliveryOption) => {

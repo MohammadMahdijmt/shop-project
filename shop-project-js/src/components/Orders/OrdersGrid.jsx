@@ -1,6 +1,6 @@
 import dayjs from "dayjs";
 import { OrderDetailsGrid } from "./OrderDetailsGrid";
-export function OrdersGrid({ orders, appData }) {
+export function OrdersGrid({ orders }) {
     return (
         <div className="orders-grid">
             {orders.map((orderItem) => {
@@ -25,7 +25,7 @@ export function OrdersGrid({ orders, appData }) {
                             </div>
                         </div>
 
-                        <OrderDetailsGrid orderItem={orderItem} appData={appData} />
+                        <OrderDetailsGrid orderItem={orderItem} />
 
                     </div>
                 )

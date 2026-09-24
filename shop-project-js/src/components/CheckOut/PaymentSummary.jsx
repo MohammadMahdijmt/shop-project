@@ -1,7 +1,10 @@
 import axios from "axios"
+import { useContext } from "react";
 import { useNavigate } from "react-router";
+import { AppdataContext } from "../../Context/AppdataContext";
 
-export function PaymentSummary({ paymentSum, appData }) {
+export function PaymentSummary({ paymentSum, }) {
+    const { appData } = useContext(AppdataContext)
     const navigate = useNavigate();
     const orderProduct = async () => {
         await axios.post('/api/orders')

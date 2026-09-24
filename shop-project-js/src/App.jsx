@@ -5,25 +5,15 @@ import { CheckOut } from './components/CheckOut/CheckOut';
 import { Orders } from './components/Orders/Orders';
 import { Tracking } from './components/Tracking/Tracking';
 import { Routes, Route } from 'react-router';
-import { useState, useEffect } from 'react';
 
 function App() {
-  const [cart, setCart] = useState([])
-
-  const appData = async () => {
-    const response = await axios.get('/api/cart-items?expand=product')
-    setCart(response.data);
-  }
-  useEffect(() => {
-    appData();
-  }, []);
 
   return (
     <Routes>
-      <Route path='/' element={<HomePage cart={cart} appData={appData} />} />
-      <Route path='/checkout' element={<CheckOut cart={cart} appData={appData} />} />
-      <Route path="/orders" element={<Orders cart={cart} appData={appData} />} />
-      <Route path="/tracking" element={<Tracking cart={cart} />} />
+      <Route path='/' element={<HomePage />} />
+      <Route path='/checkout' element={<CheckOut />} />
+      <Route path="/orders" element={<Orders />} />
+      <Route path="/tracking" element={<Tracking />} />
     </Routes>
   )
 }

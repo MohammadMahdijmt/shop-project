@@ -1,7 +1,9 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import './Header.css'
 import { NavLink, Link, useNavigate, useSearchParams } from 'react-router'
-export function Header({ cart }) {
+import { AppdataContext } from '../../Context/AppdataContext';
+export function Header() {
+    const { cart } = useContext(AppdataContext)
 
     const [searchParams] = useSearchParams();
     const searchText = searchParams.get("search")
